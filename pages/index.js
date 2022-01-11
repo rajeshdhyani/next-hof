@@ -34,7 +34,7 @@ export default function Home() {
           </div>
         </div>
         <div class="w-11/12 row-gap-12 ">
-        <div class="font-semibold text-2xl text-gray-400 border-b-2 border-gray-100 w-full pb-2  "> Announcements</div>
+        <div class="font-semibold text-2xl text-gray-400 border-b-2 border-gray-100 w-full pb-2  "> Upcomming Events</div>
         <div> <Cards2></Cards2></div>
 
         <div class="font-semibold text-2xl mt-8 text-gray-400 border-b-2 border-gray-100 w-full"> Patents</div>
