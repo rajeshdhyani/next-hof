@@ -7,7 +7,7 @@ export default function Cards()
 
         <>
         
-        <div class="flex justify-between  border-l-4 border-green-300 bg-white shadow-xl w-full mt-4">
+        <div class="flex justify-between  border-l-4 border-green-300 bg-white w-full mt-4">
           <div class="p-8">
           <img src="profile_pic.jpg" class=" rounded-full border-2 border-gray-200 w-28 h-28 object-cover"></img>
           </div>

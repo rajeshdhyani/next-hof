@@ -7,7 +7,7 @@ export default function Cards()
 
         <>
         
-        <div class="flex justify-between  border border-grey-300 bg-white shadow-xl w-full  mt-4">
+        <div class="flex justify-between  border border-grey-300 bg-white  w-full  mt-4">
           
           
           <div class="p-4  text-gray-400 w-full">

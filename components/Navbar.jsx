@@ -6,16 +6,16 @@ export default function Navbar(){
     return(
 
         <>
-           <nav class="flex bg-white border-b-2 border-green-400 ">
+           <nav class="flex bg-white border-b-2 header">
 			<div class="max-w-full mx-auto">
 				<div class="flex justify-end">
 					<div class="flex space-x-7">
 						
 						
 						<div class="hidden md:flex items-center space-x-1">
-							<a href="" class="py-8 px-6 text-black-500 border-b-4 border-green-800  ">Divisonal Updates</a>
-							<a href="" class="py-8 px-6 text-black-500  hover:text-green-500 transition duration-300 ease-in-out">Hall of Fame</a>
-							<a href="" class="py-8 px-6 text-black-500  hover:text-green-500 transition duration-300">Project Information</a>
+							<a href="" class="py-8 px-6 text-black-500 border-b-4">Divisonal Updates</a>
+							<a href="" class="py-8 px-6 text-black-500  transition duration-300 ease-in-out">Hall of Fame</a>
+							<a href="" class="py-8 px-6 text-black-500  transition duration-300">Project Information</a>
 							<Dropdown></Dropdown>
 						</div>
                           
