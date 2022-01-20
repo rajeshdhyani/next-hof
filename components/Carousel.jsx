@@ -46,8 +46,8 @@ class Carousel extends Component {
 
   render() {
     return (
-      <div class="flex w-full">
-        <div class="stretch flex overflow-hidden relative ">
+      <div className="flex w-full">
+        <div className="stretch flex overflow-hidden relative ">
           <AiOutlineLeft
             onClick={this.prevSlide}
             className="absolute left-5 text-3xl inset-y-1/2  rounded-full text-white cursor-pointer"
@@ -60,7 +60,6 @@ class Carousel extends Component {
                   src={slide.image}
                   alt="This is a carousel slide"
                   key={index}
-                  slideInterval={6} 
                   className={
                     index === this.state.currentSlide
                       ? "block w-full  object-cover transition-all ease-in-out duration-3000 transform translate-x-0"

@@ -7,7 +7,7 @@ import styles from '../styles/Home.module.css'
 function MyApp({ Component, pageProps }) {
   return (
     <>
-    <div class="sticky top-0 z-50">
+    <div className="sticky top-0 z-50">
 
       <Head>
       <link
