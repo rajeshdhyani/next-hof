@@ -3,7 +3,8 @@ import { card } from '../components/card.js';
 export default function Cards(props)
 {
 
-  const {textContent, ...rest} = props;
+  const {textContent,thumbnailUrl, ...rest} = props;
+  
     
     return(
 
@@ -14,7 +15,7 @@ export default function Cards(props)
           
           <div className="p-4  text-gray-400 w-full">
           <span className="float-right pb-4 text-xs font-semibold text-green-400 ">Featured</span>
-          <img src="2.jpg" className=" w-auto h-auto object-cover"></img>
+          <img src={thumbnailUrl} className=" w-auto h-auto object-cover"></img>
           
          
             <p className="pt-8 font-light text-gray-600">{textContent} 

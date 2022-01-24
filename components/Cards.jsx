@@ -8,7 +8,7 @@ export default function Cards()
         <>
         
         <div className="flex justify-between  border border-grey-300 bg-white  w-full  mt-4">
-          <img src="1.jpg" className=" w-1/4 h-auto object-cover p-4 "></img>
+          <img src="1.jpg" className=" w-2/4 h-auto object-cover p-4 "></img>
           
           <div className="p-4  text-gray-400 w-4/5">
           <span className="float-right pr-0 text-xs font-semibold text-green-400 ">Featured</span>

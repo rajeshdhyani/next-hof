@@ -7,9 +7,12 @@ import Cards2 from '../components/Cards2.jsx'
 import Cards3 from '../components/Cards3.jsx'
 import Newjoiners from '../components/Newjoiners.jsx'
 import StrapiClient from '../lib/strapi-client'
-export default function Home({upcomingEvents}) {
 
-console.log(upcomingEvents);
+const BASE_IMG_URL=process.env.STRAPI_API_URL;
+
+export default function Home({upcomingEvents,divisions}) {
+
+
 
   return (
     <>
@@ -39,7 +42,12 @@ console.log(upcomingEvents);
         </div>
         <div className="w-11/12 row-gap-12 ">
         <div className="font-semibold text-2xl text-gray-400 border-b-2 border-gray-100 w-full pb-2  "> Upcomming Events</div>
-        {upcomingEvents.map((upcomingEvent, index) => <Cards2 key={index} textContent={upcomingEvent.PPM_updates_textcontent}/>)}
+        {upcomingEvents.map((upcomingEvent, index) => <Cards2 key={index} 
+        textContent={upcomingEvent.PPM_updates_textcontent}
+        thumbnailUrl={`${BASE_IMG_URL}${upcomingEvent.PPM_update_banner.url}`}
+        
+        
+        />)}
 
         <div className="font-semibold text-2xl mt-8 text-gray-400 border-b-2 border-gray-100 w-full"> Patents</div>
         <div> <Cards3></Cards3></div>
@@ -57,10 +65,18 @@ const client=new StrapiClient();
 export const getStaticProps =async() => {
 console.log('entered index getStaticProps')
   const upcomingEvents =await client.fetchData('/ppm-updates');
-  console.log()
+  const divisions =await client.fetchData('/divisions');
+  const mainSliders =await client.fetchData('/hall-of-fame-sliders');
+  console.log(mainSliders)
+  
+  
   return{
     props:{
-      upcomingEvents:upcomingEvents
+      upcomingEvents:upcomingEvents,
+      divisions:divisions,
+      mainSliders:mainSliders,
+     
+
     }
   }
 }

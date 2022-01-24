@@ -1,7 +1,7 @@
 import Dropdown from "./Dropdown.jsx";
 
 
-export default function Navbar(){
+export default function Navbar({divisions}){
 
     return(
 
@@ -12,11 +12,11 @@ export default function Navbar(){
 					<div className="flex space-x-7">
 						
 						
-						<div className="hidden md:flex items-center space-x-1">
-							<a href="" className="py-8 px-6 text-black-500 border-b-4">Divisonal Updates</a>
-							<a href="" className="py-8 px-6 text-black-500  transition duration-300 ease-in-out">Hall of Fame</a>
-							<a href="" className="py-8 px-6 text-black-500  transition duration-300">Project Information</a>
-							<Dropdown></Dropdown>
+						<div className="hidden md:flex items-center space-x-2">
+							<a href="" className="py-2 px-6 text-black-200 ">Divisonal Updates</a>
+							<a href="" className="py-2 px-6 text-black-200 ">Hall of Fame</a>
+							<a href="" className="py-2 px-6 text-black-200 ">Project Information</a>
+							<Dropdown divisions={divisions}></Dropdown>
 						</div>
                           
 
@@ -25,7 +25,7 @@ export default function Navbar(){
 									
 					<div className="md:hidden flex items-center">
 						<button className="outline-none mobile-menu-button">
-						<svg className=" w-6 h-6 text-gray-500 hover:text-green-500 "
+						<svg className=" w-12 h-4 text-gray-500 hover:text-green-500 "
 							fill="none"
 							viewBox="0 0 24 24"
 						>
