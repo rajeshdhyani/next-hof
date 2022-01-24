@@ -41,11 +41,9 @@ export default function Dropdown({divisions})
   //       </> 
 
 
-<<<<<<< HEAD
-  <select name="division" id="divisions" onChange={handleSelect}>
-=======
+
   <select name="division" id="divisions" onChange={handleSelect} value={selectedDivision}>
->>>>>>> b3f7c800ee46954b223ccc862c436c24c2a583bd
+
   
   {
     divisions.map(
