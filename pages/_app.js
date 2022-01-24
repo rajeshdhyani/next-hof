@@ -4,10 +4,12 @@ import Navbar from '../components/Navbar.jsx'
 import Topbar from '../components/Topbar.jsx'
 import styles from '../styles/Home.module.css'
 import StrapiClient from '../lib/strapi-client'
+import React from 'react';
 
-function MyApp({ Component, pageProps }) {
+function MyApp(props) {
+  const {Component, pageProps, ...rest} = props;
 
-  
+  console.log('pageProps from App', props)
   return (
     <>
     <div className="sticky top-0 z-50">
@@ -39,22 +41,3 @@ function MyApp({ Component, pageProps }) {
 
 export default MyApp
 
-const client=new StrapiClient();
-export const getStaticProps =async() => {
-console.log('entered dropdown getStaticProps')
-  
-  const divisions =await client.fetchData('/divisions');
-  
-  console.log(divisions)
-  
-  
-  return{
-    props:{
-      
-      divisions:divisions,
-      
-     
-
-    }
-  }
-}

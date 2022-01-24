@@ -7,8 +7,9 @@ import Cards2 from '../components/Cards2.jsx'
 import Cards3 from '../components/Cards3.jsx'
 import Newjoiners from '../components/Newjoiners.jsx'
 import StrapiClient from '../lib/strapi-client'
+import config from './api/config'
 
-const BASE_IMG_URL=process.env.STRAPI_API_URL;
+const BASE_IMG_URL=config.BASE_IMAGE_URL;
 
 export default function Home({upcomingEvents,divisions}) {
 
