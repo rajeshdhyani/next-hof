@@ -1,7 +1,7 @@
 import Dropdown from "./Dropdown.jsx";
 
 
-export default function Navbar(){
+export default function Navbar({divisions}){
 
     return(
 
@@ -16,7 +16,7 @@ export default function Navbar(){
 							<a href="" className="py-2 px-6 text-black-200 ">Divisonal Updates</a>
 							<a href="" className="py-2 px-6 text-black-200 ">Hall of Fame</a>
 							<a href="" className="py-2 px-6 text-black-200 ">Project Information</a>
-							<Dropdown></Dropdown>
+							<Dropdown divisions={divisions}></Dropdown>
 						</div>
                           
 

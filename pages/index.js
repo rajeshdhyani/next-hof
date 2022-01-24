@@ -10,7 +10,7 @@ import StrapiClient from '../lib/strapi-client'
 
 const BASE_IMG_URL=process.env.STRAPI_API_URL;
 
-export default function Home({upcomingEvents}) {
+export default function Home({upcomingEvents,divisions}) {
 
 
 
@@ -66,13 +66,15 @@ export const getStaticProps =async() => {
 console.log('entered index getStaticProps')
   const upcomingEvents =await client.fetchData('/ppm-updates');
   const divisions =await client.fetchData('/divisions');
-  console.log(divisions)
+  const mainSliders =await client.fetchData('/hall-of-fame-sliders');
+  console.log(mainSliders)
   
   
   return{
     props:{
       upcomingEvents:upcomingEvents,
-      divisions:divisions
+      divisions:divisions,
+      mainSliders:mainSliders,
      
 
     }
