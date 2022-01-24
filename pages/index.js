@@ -12,7 +12,7 @@ const BASE_IMG_URL=process.env.STRAPI_API_URL;
 
 export default function Home({upcomingEvents}) {
 
-console.log("index",BASE_IMG_URL);
+
 
   return (
     <>
@@ -65,10 +65,16 @@ const client=new StrapiClient();
 export const getStaticProps =async() => {
 console.log('entered index getStaticProps')
   const upcomingEvents =await client.fetchData('/ppm-updates');
-  console.log()
+  const divisions =await client.fetchData('/divisions');
+  console.log(divisions)
+  
+  
   return{
     props:{
-      upcomingEvents:upcomingEvents
+      upcomingEvents:upcomingEvents,
+      divisions:divisions
+     
+
     }
   }
 }

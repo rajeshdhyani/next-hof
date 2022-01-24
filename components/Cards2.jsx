@@ -5,7 +5,7 @@ export default function Cards(props)
 
   const {textContent,thumbnailUrl, ...rest} = props;
   
-    console.log(thumbnailUrl);
+    
     return(
 
         <div {...rest}>
