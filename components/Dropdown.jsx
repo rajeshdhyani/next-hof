@@ -4,9 +4,11 @@ import StrapiClient from '../lib/strapi-client'
 
 export default function Dropdown({divisions})
 {
-  
-  console.log("inside dropdown", divisions)
-  const handleSelect=React.useCallback((param)=>{console.log(param)},[])
+
+  const [selectedDivision,setSelectedDivision] =React.useState(divisions[0].divisionName)  
+  console.log("inside dropdown", selectedDivision)
+  const handleSelect=React.useCallback((e)=>{setSelectedDivision(e.target.value)},[])
+
     return(
 
   //       <>
@@ -39,7 +41,11 @@ export default function Dropdown({divisions})
   //       </> 
 
 
+<<<<<<< HEAD
   <select name="division" id="divisions" onChange={handleSelect}>
+=======
+  <select name="division" id="divisions" onChange={handleSelect} value={selectedDivision}>
+>>>>>>> b3f7c800ee46954b223ccc862c436c24c2a583bd
   
   {
     divisions.map(
