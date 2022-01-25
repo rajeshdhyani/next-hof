@@ -11,10 +11,9 @@ import config from './api/config'
 
 const BASE_IMG_URL=config.BASE_IMAGE_URL;
 
-export default function Home({upcomingEvents,divisions}) {
+export default function Home({upcomingEvents,divisions,divisionName}) {
 
-
-
+  
   return (
     <>
    <div className="flex justify-center w-full relative" >
@@ -43,10 +42,15 @@ export default function Home({upcomingEvents,divisions}) {
         </div>
         <div className="w-11/12 row-gap-12 ">
         <div className="font-semibold text-2xl text-gray-400 border-b-2 border-gray-100 w-full pb-2  "> Upcomming Events</div>
-        {upcomingEvents.map((upcomingEvent, index) => <Cards2 key={index} 
+        {upcomingEvents.map((upcomingEvent, index) =>
+        
+        <Cards2 key={index} 
+          
+        
+        
         textContent={upcomingEvent.PPM_updates_textcontent}
         thumbnailUrl={`${BASE_IMG_URL}${upcomingEvent.PPM_update_banner.url}`}
-        
+        divisionName={upcomingEvent.divisionName}
         
         />)}
 
@@ -68,7 +72,7 @@ console.log('entered index getStaticProps')
   const upcomingEvents =await client.fetchData('/ppm-updates');
   const divisions =await client.fetchData('/divisions');
   const mainSliders =await client.fetchData('/hall-of-fame-sliders');
-  console.log(mainSliders)
+  console.log(upcomingEvents)
   
   
   return{
@@ -76,7 +80,7 @@ console.log('entered index getStaticProps')
       upcomingEvents:upcomingEvents,
       divisions:divisions,
       mainSliders:mainSliders,
-     
+      
 
     }
   }

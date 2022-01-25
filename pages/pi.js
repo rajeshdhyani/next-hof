@@ -18,7 +18,7 @@ export default function hof({upcomingEvents,divisions}) {
     <div><Carousel></Carousel></div>
         <div className="grid grid-cols-2 gap-8 ml-48 mr-48 ">
         <div className="w-11/12 row-gap-12 ">
-        <div className="font-semibold text-2xl text-gray-400 border-b-2 border-gray-100 w-full pb-2  "> Hall of Fame</div>
+        <div className="font-semibold text-2xl text-gray-400 border-b-2 border-gray-100 w-full pb-2  "> project information</div>
         {upcomingEvents.map((upcomingEvent, index) => <Cards2 key={index} 
         textContent={upcomingEvent.PPM_updates_textcontent}
         thumbnailUrl={`${BASE_IMG_URL}${upcomingEvent.PPM_update_banner.url}`}
