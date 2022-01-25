@@ -10,10 +10,9 @@ import StrapiClient from '../lib/strapi-client'
 
 const BASE_IMG_URL=process.env.STRAPI_API_URL;
 
-export default function Home({upcomingEvents,divisions}) {
+export default function Home({upcomingEvents,divisions,divisionName}) {
 
-
-
+  
   return (
     <>
    <div className="flex justify-center w-full relative" >
