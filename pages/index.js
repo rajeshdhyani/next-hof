@@ -45,12 +45,9 @@ export default function Home({upcomingEvents,divisions,divisionName}) {
         {upcomingEvents.map((upcomingEvent, index) =>
         
         <Cards2 key={index} 
-          
-        
-        
         textContent={upcomingEvent.PPM_updates_textcontent}
         thumbnailUrl={`${BASE_IMG_URL}${upcomingEvent.PPM_update_banner.url}`}
-        divisionName={upcomingEvent.divisionName}
+        // divisionName={upcomingEvent.divisionName}
         
         />)}
 

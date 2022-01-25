@@ -18,7 +18,10 @@ export default function Navbar({divisions}){
 						</Link>	
 						<Link href="/hof">
 							<a className="py-2 px-6 text-black-200 ">Hall of Fame</a>
+							
 						</Link>
+						
+
 						<Link href="/pi">
 							<a  className="py-2 px-6 text-black-200 ">Project Information</a>
 							</Link>
@@ -51,10 +54,10 @@ export default function Navbar({divisions}){
 			
 			<div className="hidden mobile-menu">
 				<ul className="">
-					<li className="active"><a href="index.html" className="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
-					<li><a href="#services" className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Services</a></li>
-					<li><a href="#about" className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">About</a></li>
-					<li><a href="#contact" className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Contact Us</a></li>
+					<li className="active"><Link href="/"><a className="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Divisional Updates</a></Link></li>
+					<li><Link href="hof"><a  className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Hall of Fame</a></Link></li>
+					<li><Link href="pi"><a className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Project Information</a></Link></li>
+					<li><Dropdown divisions={divisions}></Dropdown></li>
 				</ul>
 			</div>
 			
