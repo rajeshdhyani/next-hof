@@ -1,18 +1,21 @@
 import React from 'react';
+import { withRouter } from 'next/router'
 
 
 export default function Dropdown({divisions})
 {
-
+  
   const [selectedDivision,setSelectedDivision] =React.useState()  
   
 React.useEffect(()=>{if(divisions) setSelectedDivision(divisions[0].divisionName)})
 
   const handleSelect=React.useCallback((e)=>{setSelectedDivision(e.target.value)},[])
 
+  console.log("test",selectedDivision)
     return(
 <div className="inline-block relative w-64">
-  <select className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" name="division" id="divisions" onChange={handleSelect} value={selectedDivision}>
+  <select className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+  name="division" id="divisions" onChange={handleSelect} value={selectedDivision}>
 
   
   {
