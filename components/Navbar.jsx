@@ -13,9 +13,9 @@ export default function Navbar({divisions}){
 						
 						
 						<div className="hidden md:flex items-center space-x-2">
-							<a href="" className="py-2 px-6 text-black-200 ">Divisonal Updates</a>
-							<a href="" className="py-2 px-6 text-black-200 ">Hall of Fame</a>
-							<a href="" className="py-2 px-6 text-black-200 ">Project Information</a>
+						<Link href="/"><a className="py-2 px-6 text-black-200 ">Divisonal Updates</a></Link>
+						<Link href="hof"><a className="py-2 px-6 text-black-200 ">Hall of Fame</a></Link>
+						<Link href="pi"><a className="py-2 px-6 text-black-200 ">Project Information</a></Link>
 							<Dropdown divisions={divisions}></Dropdown>
 						</div>
                           
