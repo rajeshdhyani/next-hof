@@ -5,6 +5,7 @@ import config from './api/config'
 import SearchBar from '../components/SearchBar';
 import ProfileCard from '../components/ProfileCard';
 import Dropdown from '../components/Dropdown.jsx';
+import ReactPlayer from 'react-player';
 
 
 
@@ -28,8 +29,12 @@ console.log("Entered HOF",starAwardees)
        
         <div className='bg-gray-200 grid grid-cols-3 gap-8 flex items-center'>
           <SearchBar></SearchBar>
-          <Dropdown className="justify-right"></Dropdown>
+          <span className='ml-36 mr-px'>
           <Dropdown></Dropdown>
+          </span>
+          <span className='ml-36 mr-px'>
+          <Dropdown></Dropdown>
+          </span>
           </div>
           </div>
 
