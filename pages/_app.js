@@ -1,9 +1,6 @@
-import Head from "next/head";
 import 'tailwindcss/tailwind.css'
-import styles from '../styles/Home.module.css'
 import Navbar from '../components/Navbar.jsx'
 import Topbar from '../components/Topbar.jsx'
-import styles from '../styles/Home.module.css'
 import StrapiClient from '../lib/strapi-client'
 
 function MyApp({ Component, pageProps }) {
