@@ -1,3 +1,19 @@
+
+const BASE_IMG_URL=process.env.STRAPI_API_URL;
+
+export default function carousel({mainSliders})
+{
+
+console.log("CarouselData",mainSliders)
+
+
+
+
+
+
+
+
+}
 export const CarouselData = [
   {
     image:

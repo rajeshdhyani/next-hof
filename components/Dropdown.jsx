@@ -2,20 +2,24 @@ import React from 'react';
 import { withRouter } from 'next/router'
 
 
-export default function Dropdown({divisions})
+export default function Dropdown({divisions,onChange,...props})
 {
   
-  const [selectedDivision,setSelectedDivision] =React.useState()  
+  const [selectedDivision,setSelectedDivision] =React.useState(props.selectedDivision)  
   
-React.useEffect(()=>{if(divisions) setSelectedDivision(divisions[0].divisionName)})
+//React.useEffect(()=>{if(divisions) setSelectedDivision(divisions[0].divisionName)})
 
-  const handleSelect=React.useCallback((e)=>{setSelectedDivision(e.target.value)},[])
+  const handleSelect=React.useCallback((e)=>{setSelectedDivision(e.target.value) 
+  
+  onChange(e.target.value)
+  
+  },[onChange])
 
-  console.log("test",selectedDivision)
+  console.log("Selected Value in DropDown ::",selectedDivision)
     return(
 <div className="inline-block relative w-64">
   <select className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
-  name="division" id="divisions" onChange={handleSelect} value={selectedDivision}>
+  name="division" id="divisions" onChange={handleSelect} value={selectedDivision} >
 
   
   {
@@ -33,3 +37,17 @@ React.useEffect(()=>{if(divisions) setSelectedDivision(divisions[0].divisionName
 
 
 }
+export const getStaticProps =async() => {
+  console.log('entered hof getStaticProps')
+    const data =selectedDivision
+    console.log("Selected Division in dropdown",data)
+    
+    
+    return{
+      props:{
+        data:data,
+               
+  
+      }
+    }
+  }

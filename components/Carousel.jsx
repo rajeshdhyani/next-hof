@@ -3,6 +3,8 @@ import { CarouselData } from '../components/CarouselData.js';
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import Swipe from "react-easy-swipe";
 
+
+
 class Carousel extends Component {
   constructor(props) {
     super(props);
@@ -44,13 +46,21 @@ class Carousel extends Component {
     this.setState({ currentSlide: index });
   };
 
+  
+
   render() {
+    //console.log("CarouselData",props)
+
+
+    // const CarouselData = {pageProps.mainSliders}
+
+    
     return (
       <div className="flex w-full">
         <div className="stretch flex overflow-hidden relative ">
           <AiOutlineLeft
             onClick={this.prevSlide}
-            className="absolute left-5 text-3xl inset-y-1/2  rounded-full text-white cursor-pointer"
+            className="absolute left-5 text-3xl inset-x-1/2  rounded-full text-white cursor-pointer"
           />
 
           <Swipe onSwipeLeft={this.nextSlide} onSwipeRight={this.prevSlide}>

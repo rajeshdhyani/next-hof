@@ -8,7 +8,7 @@ const BASE_IMG_URL=config.BASE_IMAGE_URL;
 
 export default function hof({upcomingEvents,divisions}) {
 
-
+  console.log("drop down in PI")
 
   return (
     <>
