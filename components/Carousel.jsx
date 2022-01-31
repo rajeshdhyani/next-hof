@@ -6,6 +6,8 @@ import Swipe from "react-easy-swipe";
 
 
 class Carousel extends Component {
+
+  
   constructor(props) {
     super(props);
     this.state = {
