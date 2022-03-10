@@ -1,43 +1,25 @@
-import React from 'react'
-import 'tailwindcss/tailwind.css'
-import Navbar from '../components/Navbar.jsx'
-import Topbar from '../components/Topbar.jsx'
-import StrapiClient from '../lib/strapi-client'
+import React, {useState} from 'react';
+import Layout from '../components/layout/Layout';
+import '../styles/global.css'
+import { MyAppContextProvider } from '../store/MyAppContext';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
-
-  const [selectedDivision,setSelectedDivision]=React.useState(pageProps?.divisions[0].divisionName);
-  
-  const handleSelectedDivisionChange=React.useCallback((division)=>{
-
-
-    setSelectedDivision(division)
-
-
-
-  }, [])
-
-  
+   const [selectedDivision, setSelectedDivision] = useState(pageProps?.divisions[0].divisionName);
+  // const handleSelectedDivisionChange = React.useCallback((division) => {
+  //   setSelectedDivision(division)
+  // }, [])
   return (
-    <>
-    <div className="sticky top-0 z-50">
-
-          
-    <Topbar></Topbar>
-    
-     <Navbar divisions={pageProps.divisions} selectedDivision={selectedDivision} onSelectedDivisionChange={handleSelectedDivisionChange}></Navbar>
-    
-    </div>
-    
-    <Component {...pageProps} selectedDivision={selectedDivision}></Component> 
-    
-   
-    
-  
-    </>
-    )
+    <MyAppContextProvider>
+      <Layout>
+        <Head>
+          <title>Divisional Updates</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
+        <Component {...pageProps} divisions={pageProps.divisions} selectedDivision={selectedDivision}/>
+      </Layout>
+    </MyAppContextProvider>
+  )
 }
 
 export default MyApp
-
-

@@ -23,7 +23,7 @@
   }
   
   .text {
-    @apply font-semibold leading-none text-base tracking-wider text-gray-400;
+    @apply font-semibold leading-none text-base;
   }
   
   .badgeWrapper {

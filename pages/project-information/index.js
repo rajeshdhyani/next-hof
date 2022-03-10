@@ -1,36 +1,32 @@
-import Carousel from '../components/Carousel.jsx'
-import Cards2 from '../components/Cards2.jsx'
-import StrapiClient from '../lib/strapi-client'
-import config from './api/config'
+import Carousel from '../../components/Carousel'
+import Cards2 from '../../components/Cards2.jsx'
+import StrapiClient from '../../lib/strapi-client'
+import config from '../api/config'
+import Head from 'next/head'
 
 
 const BASE_IMG_URL=config.BASE_IMAGE_URL;
-
 export default function hof({upcomingEvents,divisions}) {
-
   console.log("drop down in PI")
-
   return (
     <>
+    <Head>
+      <title>Project Information</title>
+    </Head>
    <div className="flex justify-center w-full relative" >
-
   <div className="grid grid-cols-1 gap-6">
     <div><Carousel></Carousel></div>
         <div className="grid grid-cols-2 gap-8 ml-48 mr-48 ">
         <div className="w-11/12 row-gap-12 ">
-        <div className="font-semibold text-2xl text-gray-400 border-b-2 border-gray-100 w-full pb-2  "> project information</div>
+        <div className="font-semibold text-2xl text-gray-400 border-b-2 border-gray-100 w-full pb-2  "> Project information</div>
         {upcomingEvents.map((upcomingEvent, index) => <Cards2 key={index} 
         textContent={upcomingEvent.PPM_updates_textcontent}
         thumbnailUrl={`${BASE_IMG_URL}${upcomingEvent.PPM_update_banner.url}`}
-        
-        
         />)}
-
         </div>
       </div>
     </div>
   </div>  
-     
     </>
   )
 }
@@ -41,15 +37,11 @@ console.log('entered index getStaticProps')
   const divisions =await client.fetchData('/divisions');
   const mainSliders =await client.fetchData('/hall-of-fame-sliders');
   console.log(mainSliders)
-  
-  
   return{
     props:{
       upcomingEvents:upcomingEvents,
       divisions:divisions,
       mainSliders:mainSliders,
-     
-
     }
   }
 }

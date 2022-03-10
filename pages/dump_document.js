@@ -10,7 +10,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-
         <link
             rel="preload"
             href="/fonts/Akkurat/Akkurat-Regular.otf"
@@ -18,7 +17,6 @@ class MyDocument extends Document {
             crossOrigin=""
           />
           </Head>
-
         <body >
           <Main />
           <NextScript />

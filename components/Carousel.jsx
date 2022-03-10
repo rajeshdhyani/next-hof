@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import { CarouselData } from '../components/CarouselData.js';
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import Swipe from "react-easy-swipe";
-
-
+import Image from "next/image";
 
 class Carousel extends Component {
-
-  
   constructor(props) {
     super(props);
     this.state = {
@@ -47,8 +44,6 @@ class Carousel extends Component {
   setCurrentSlide = (index) => {
     this.setState({ currentSlide: index });
   };
-
-  
 
   render() {
     //console.log("CarouselData",props)
