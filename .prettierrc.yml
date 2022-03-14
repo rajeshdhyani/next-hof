@@ -1,0 +1,24 @@
+arrowParens: 'always'
+singleQuote: true
+semi: true
+trailingComma: 'all'
+tabWidth: 2
+printWidth: 120
+proseWrap: 'preserve'
+jsxBracketSameLine: false
+overrides:
+  - files:
+      - '**/package*.json'
+      - '**/tsconfig.json'
+      - '**/*.lock'
+    options:
+      singleQuote: false
+  - files:
+      - '*.yaml'
+      - '*.yml'
+    options:
+      parser: 'yaml'
+  - files:
+      - '*.json'
+    options:
+      parser: 'json'

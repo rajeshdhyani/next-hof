@@ -1021,6 +1021,11 @@ postcss@^8.1.6, postcss@^8.3.5:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
+prettier@^2.5.1:
+  version "2.5.1"
+  resolved "https://pkgs.dev.azure.com/hexagonPPMInnerSource/_packaging/PPM/npm/registry/prettier/-/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
+  integrity sha1-//dfqdUZxUzw/OMowQF9lFRrxWo=
+
 pretty-hrtime@^1.0.3:
   version "1.0.3"
   resolved "https://pkgs.dev.azure.com/hexagonPPMInnerSource/_packaging/PPM/npm/registry/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
@@ -1300,6 +1305,11 @@ util-deprecate@^1.0.2:
   version "1.0.2"
   resolved "https://pkgs.dev.azure.com/hexagonPPMInnerSource/_packaging/PPM/npm/registry/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
+
+uuid@^8.3.2:
+  version "8.3.2"
+  resolved "https://pkgs.dev.azure.com/hexagonPPMInnerSource/_packaging/PPM/npm/registry/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha1-gNW1ztJxu5r2xEXyGhoExgbO++I=
 
 wrappy@1:
   version "1.0.2"

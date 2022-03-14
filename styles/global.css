@@ -3,11 +3,39 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Akkurat";
-    src: url("/fonts/Akkurat/Akkurat-Regular.otf");
-    font-display: swap;
+  font-family: 'Akkurat';
+  src: url('/fonts/Akkurat/Akkurat-Regular.otf');
+  font-display: swap;
 }
 
+/* Place to set any theme level vars - not sure how tailwind works until I tinker with it deeply */
 
+:root {
+  /* you could set something like --palette-primary-main/light/dark, --palette-secondary-main/light/dark and accents etc.
+  and, detrive other colours out of these */
+  --palette-border: #a4a4a4;
+  --palette-list-hover: rgba(5, 134, 166, 0.2);
+  --palette-list-selected: rgb(5, 134, 166);
+  --palette-focus-border: rgb(5, 134, 166);
+  --palette-paper: #ffffff;
+  --palette-box-shadow: rgba(0, 0, 0, 0.2);
+  --palette-background-default: #f4f4f4;
+  --palette-background-thumb: #c4c4c4;
+}
 
+*::-webkit-scrollbar {
+  width: 8px;
+}
 
+*::-webkit-scrollbar-track {
+  background: var(--palette-background-default);
+  border: none;
+  width: 16px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--palette-background-thumb);
+  border-radius: 12px;
+  border: none;
+  width: 8px;
+}

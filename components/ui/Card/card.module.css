@@ -1,0 +1,12 @@
+.root {
+  background: var(--palette-paper);
+  border: 1px solid var(--palette-border);
+  width: 100%;
+  height: auto;
+  /* box-shadow: 2px 2px 5px var(--palette-box-shadow); */
+  /*todo: RD Can check if the drop shadow is needed by default or only on hover; */
+}
+
+.root:hover {
+  box-shadow: 2px 2px 5px var(--palette-box-shadow);
+}

@@ -1,25 +1,28 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
-import '../styles/global.css'
+import '../styles/global.css';
 import { MyAppContextProvider } from '../store/MyAppContext';
 import Head from 'next/head';
+import AppContextProvider from '../store/AppContextProvider';
+import useAppContext from '../store/AppContextProvider/useAppContext';
 
 function MyApp({ Component, pageProps }) {
-   const [selectedDivision, setSelectedDivision] = useState(pageProps?.divisions[0].divisionName);
-  // const handleSelectedDivisionChange = React.useCallback((division) => {
-  //   setSelectedDivision(division)
-  // }, [])
+  const [selectedDivision, setSelectedDivision] = useState(pageProps?.divisions[0].divisionName);
+  const [divisions, setDivisions] = React.useState(pageProps?.divisions);
+
+  const appContext = { divisions, setDivisions, selectedDivision, setSelectedDivision };
+
   return (
-    <MyAppContextProvider>
+    <AppContextProvider value={appContext}>
       <Layout>
         <Head>
           <title>Divisional Updates</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
-        <Component {...pageProps} divisions={pageProps.divisions} selectedDivision={selectedDivision}/>
+        <Component {...pageProps} />
       </Layout>
-    </MyAppContextProvider>
-  )
+    </AppContextProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
