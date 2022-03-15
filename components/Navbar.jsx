@@ -6,16 +6,16 @@ export default function Navbar({divisions,selectedDivision,onSelectedDivisionCha
     return(
 
         <>
-           <nav className="flex bg-white border-b-2 header">
+           <nav className="flex bg-white border-b-4 header">
 			<div className="max-w-full mx-auto">
 				<div className="flex justify-end">
 					<div className="flex space-x-7">
 						
 						
 						<div className="hidden md:flex items-center space-x-2">
-						<Link href="/"><a className="py-2 px-6 text-black-200 ">Divisonal Updates</a></Link>
-						<Link href="/hof"><a className="py-2 px-6 text-black-200 ">Hall of Fame</a></Link>
-						<Link href="/pi"><a className="py-2 px-6 text-black-200 ">Project Information</a></Link>
+						<Link href="/"><a className="navlist py-2 px-6 text-black-200 ">Divisonal Updates</a></Link>
+						<Link href="/hof"><a className="navlist py-2 px-6 text-black-200 ">Hall of Fame</a></Link>
+						<Link href="/pi"><a className="navlist py-2 px-6 text-black-200 ">Project Information</a></Link>
 							<Dropdown divisions={divisions} selectedDivision={selectedDivision} onChange={onSelectedDivisionChange}></Dropdown>
 						</div>
                           

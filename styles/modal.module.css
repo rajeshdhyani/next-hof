@@ -1,0 +1,54 @@
+.overlay{
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0, 0, 0.25);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1 1 auto;
+}
+
+.modal
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    min-height: fit-content;
+    min-width: 600px;
+    border-radius: 8px;
+}
+.header
+{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    min-height:56px;
+
+}
+
+.footer
+{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    min-height:min-content;
+
+}
+.content
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height:fit-content;
+}

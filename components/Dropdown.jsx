@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'next/router'
 
 
 export default function Dropdown({divisions,onChange,...props})
@@ -7,8 +6,6 @@ export default function Dropdown({divisions,onChange,...props})
   
   const [selectedDivision,setSelectedDivision] =React.useState(props.selectedDivision)  
   
-//React.useEffect(()=>{if(divisions) setSelectedDivision(divisions[0].divisionName)})
-
   const handleSelect=React.useCallback((e)=>{setSelectedDivision(e.target.value) 
   
   onChange(e.target.value)

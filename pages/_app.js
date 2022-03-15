@@ -1,43 +1,34 @@
-import React from 'react'
-import 'tailwindcss/tailwind.css'
-import Navbar from '../components/Navbar.jsx'
-import Topbar from '../components/Topbar.jsx'
-import StrapiClient from '../lib/strapi-client'
+import React from "react";
+import "tailwindcss/tailwind.css";
+import Navbar from "../components/Navbar.jsx";
+import Topbar from "../components/Topbar.jsx";
+import StrapiClient from "../lib/strapi-client";
+import styles from "../styles/global.css";
 
 function MyApp({ Component, pageProps }) {
+  const [selectedDivision, setSelectedDivision] = React.useState(
+    pageProps?.divisions[0].divisionName
+  );
 
-  const [selectedDivision,setSelectedDivision]=React.useState(pageProps?.divisions[0].divisionName);
-  
-  const handleSelectedDivisionChange=React.useCallback((division)=>{
+  const handleSelectedDivisionChange = React.useCallback((division) => {
+    setSelectedDivision(division);
+  }, []);
 
-
-    setSelectedDivision(division)
-
-
-
-  }, [])
-
-  
   return (
     <>
-    <div className="sticky top-0 z-50">
+      <div className="sticky top-0 z-50">
+        <Topbar></Topbar>
 
-          
-    <Topbar></Topbar>
-    
-     <Navbar divisions={pageProps.divisions} selectedDivision={selectedDivision} onSelectedDivisionChange={handleSelectedDivisionChange}></Navbar>
-    
-    </div>
-    
-    <Component {...pageProps} selectedDivision={selectedDivision}></Component> 
-    
-   
-    
-  
+        <Navbar
+          divisions={pageProps.divisions}
+          selectedDivision={selectedDivision}
+          onSelectedDivisionChange={handleSelectedDivisionChange}
+        ></Navbar>
+      </div>
+
+      <Component {...pageProps} selectedDivision={selectedDivision}></Component>
     </>
-    )
+  );
 }
 
-export default MyApp
-
-
+export default MyApp;

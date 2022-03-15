@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-import { CarouselData } from '../components/CarouselData.js';
+import { CarouselData } from "../components/CarouselData.js";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import Swipe from "react-easy-swipe";
+import config from "../pages/api/config";
 
-
+const BASE_IMAGE_URL = config.BASE_IMAGE_URL;
 
 class Carousel extends Component {
-
-  
   constructor(props) {
     super(props);
     this.state = {
       currentSlide: 0,
       paused: false,
+      data: props.data,
     };
   }
 
@@ -20,7 +20,7 @@ class Carousel extends Component {
     setInterval(() => {
       if (this.state.paused === false) {
         let newSlide =
-          this.state.currentSlide === CarouselData.length - 1
+          this.state.currentSlide === this.state.data.length - 1
             ? 0
             : this.state.currentSlide + 1;
         this.setState({ currentSlide: newSlide });
@@ -30,7 +30,7 @@ class Carousel extends Component {
 
   nextSlide = () => {
     let newSlide =
-      this.state.currentSlide === CarouselData.length - 1
+      this.state.currentSlide === this.state.data.length - 1
         ? 0
         : this.state.currentSlide + 1;
     this.setState({ currentSlide: newSlide });
@@ -39,7 +39,7 @@ class Carousel extends Component {
   prevSlide = () => {
     let newSlide =
       this.state.currentSlide === 0
-        ? CarouselData.length - 1
+        ? this.state.data.length - 1
         : this.state.currentSlide - 1;
     this.setState({ currentSlide: newSlide });
   };
@@ -48,15 +48,7 @@ class Carousel extends Component {
     this.setState({ currentSlide: index });
   };
 
-  
-
   render() {
-    //console.log("CarouselData",props)
-
-
-    // const CarouselData = {pageProps.mainSliders}
-
-    
     return (
       <div className="flex w-full">
         <div className="stretch flex overflow-hidden relative ">
@@ -66,10 +58,10 @@ class Carousel extends Component {
           />
 
           <Swipe onSwipeLeft={this.nextSlide} onSwipeRight={this.prevSlide}>
-            {CarouselData.map((slide, index) => {
+            {this.state.data.map((slide, index) => {
               return (
                 <img
-                  src={slide.image}
+                  src={`${BASE_IMAGE_URL}${slide.sliderImg[0].url}`}
                   alt="This is a carousel slide"
                   key={index}
                   className={
@@ -89,7 +81,7 @@ class Carousel extends Component {
           </Swipe>
 
           <div className="absolute w-full flex justify-center bottom-5 ">
-            {CarouselData.map((element, index) => {
+            {this.state.data.map((element, index) => {
               return (
                 <div
                   className={
