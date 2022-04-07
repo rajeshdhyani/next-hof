@@ -4,10 +4,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-
-      fontFamily:{
-        'sans': ['Akkurat','Arial']
-
+      fontFamily: {
+        'sans': ['Akkurat', 'Arial']
       }
     },
   },

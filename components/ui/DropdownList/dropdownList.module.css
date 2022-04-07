@@ -1,0 +1,77 @@
+.root {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  min-width: 16rem;
+  border: 1px solid var(--palette-border);
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  background-color: white;
+}
+
+.root:focus {
+  outline: 2px solid var(--palette-focus-border);
+  border: none;
+}
+
+.valueContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.valueContainer:hover{
+  cursor: pointer;
+}
+
+.value {
+  margin-left: 0.5rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevronContainer {
+  width: 3rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chevron {
+  border-left: 1px solid var(--palette-border);
+  border-bottom: 1px solid var(--palette-border);
+  width: 8px;
+  height: 8px;
+  transform-origin: center;
+  transform: rotate(-45deg);
+}
+
+.chevronUp {
+  transform: rotate(135deg);
+}
+
+.popup {
+  z-index: 600;
+  background-color: var(--palette-paper);
+  border: 1px solid var(--palette-border);
+  border-top: none;
+  border-radius: 0.25rem;
+  box-shadow: 1px 1px 2px var(--palette-box-shadow);
+  position: absolute;
+  display: block;
+}
+
+.listContainer {
+  height: 100%;
+  /* width: 100%; */
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

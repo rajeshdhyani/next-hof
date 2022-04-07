@@ -1,0 +1,20 @@
+.navLink{
+    padding-bottom: 16px;
+    color: #000000;
+    transition: all 300ms;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.navLink:hover{
+    color: #005072;
+    
+}
+
+.active{
+    font-size: 18px;
+    line-height: 18px;
+    padding-bottom: 16px;
+    box-sizing: border-box;
+    border-bottom: 4px solid #509E2F;
+}
