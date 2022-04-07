@@ -7,7 +7,8 @@ import AppContextProvider from '../store/AppContextProvider';
 import useAppContext from '../store/AppContextProvider/useAppContext';
 
 function MyApp({ Component, pageProps }) {
-  const [selectedDivision, setSelectedDivision] = useState(pageProps?.divisions[0].divisionName);
+  // const [selectedDivision, setSelectedDivision] = useState(pageProps?.divisions[0].divisionName);
+  const [selectedDivision, setSelectedDivision] = useState();
   const [divisions, setDivisions] = React.useState(pageProps?.divisions);
 
   const appContext = { divisions, setDivisions, selectedDivision, setSelectedDivision };

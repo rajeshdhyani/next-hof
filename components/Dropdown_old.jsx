@@ -8,8 +8,6 @@ export default function Dropdown({ divisions, onChange, ...props }) {
 
   //React.useEffect(()=>{if(divisions) setSelectedDivision(divisions[0].divisionName)})
 
-  console.log('Inside Dropdown component: ', divisions)
-
   const handleSelect = React.useCallback(
     (e) => {
       setSelectedDivision(e.target.value);
@@ -17,8 +15,6 @@ export default function Dropdown({ divisions, onChange, ...props }) {
     },
     [onChange]
   );
-
-  //console.log("Selected Value in DropDown ::", selectedDivision);
   return (
     <div className="inline-block relative w-64">
       <select
@@ -53,10 +49,7 @@ export default function Dropdown({ divisions, onChange, ...props }) {
   );
 }
 export const getStaticProps = async () => {
-  console.log("entered hof getStaticProps");
   const data = selectedDivision;
-  console.log("Selected Division in dropdown", data);
-
   return {
     props: {
       data: data,

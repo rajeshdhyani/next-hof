@@ -46,11 +46,7 @@ class Carousel extends Component {
   };
 
   render() {
-    //console.log("CarouselData",props)
-
-
     // const CarouselData = {pageProps.mainSliders}
-
     
     return (
       <div className="flex w-full">

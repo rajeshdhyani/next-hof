@@ -17,6 +17,7 @@ const DropdownList = React.forwardRef((props, ref) => {
     onChange,
     popupMaxHeight = 48 * 5,
     popupMaxWidth,
+    text,
     textAccessor = 'text',
     value,
     valueAccessor = 'value',
@@ -98,7 +99,7 @@ const DropdownList = React.forwardRef((props, ref) => {
             : valueContainerRect.width
           : valueContainerRect.width,
         display: 'block',
-        height: height,
+        height: 'auto',
         right: 0,
         top: top || 0,
       };
@@ -117,7 +118,7 @@ const DropdownList = React.forwardRef((props, ref) => {
   return (
     <div ref={ref} className={classnames(styles.root, className)} onBlur={handleBlur} tabIndex="0" {...rest}>
       <div ref={valueContainerRef} onClick={handleClick} className={classnames(styles.valueContainer)}>
-        <div className={classnames(styles.value)}>{value}</div>
+        <div className={classnames(styles.value)}>{text}</div>
         <div className={classnames(styles.chevronContainer)}>
           <div className={classnames(styles.chevron, { [styles.chevronUp]: isPopupOpen })}></div>
         </div>

@@ -6,6 +6,7 @@
   border: 1px solid var(--palette-border);
   height: 2.5rem;
   border-radius: 0.25rem;
+  background-color: white;
 }
 
 .root:focus {
@@ -19,6 +20,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.valueContainer:hover{
+  cursor: pointer;
 }
 
 .value {
@@ -61,7 +66,7 @@
 
 .listContainer {
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;

@@ -32,7 +32,7 @@ export default function Navbar() {
             ></Dropdown> */}
             <DropdownList
               items={appContext?.divisions}
-              value={appContext.selectedDivision}
+              text={appContext.selectedDivision}
               textAccessor="divisionName"
               valueAccessor="divisionName"
               onChange={appContext?.setSelectedDivision}
@@ -72,10 +72,6 @@ export default function Navbar() {
             <Link href="/project-information">
               <a className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Project Information</a>
             </Link>
-          </li>
-          <li>
-            {/* <DropdownList items={} */}
-            {/* <Dropdown divisions={divisions}></Dropdown> */}
           </li>
         </ul>
       </div>

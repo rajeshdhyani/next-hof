@@ -8,13 +8,15 @@ import Newjoiners from '../components/Newjoiners.jsx';
 import StrapiClient from '../lib/strapi-client';
 import ReactPlayer from 'react-player';
 import React from 'react';
-import config from './api/config';
+import config from '../api/config';
 import DropdownList from '../components/ui/DropdownList';
 import { v4 as uuid } from 'uuid';
 import safeGet from '../helpers/safeGet';
 import DropdownChoice from '../components/ui/DropdownChoice';
 import useAppContext from '../store/AppContextProvider/useAppContext';
+import Modal from 'react-modal';
 
+Modal.setAppElement("#__next");
 export default function Home({
   upcomingEvents,
   divisions,
@@ -39,16 +41,10 @@ export default function Home({
   }, [appContext]);
 
   React.useEffect(() => {
-    setDivisionalUpcomingEvents(
-      upcomingEvents.filter((upcomingEvent) => upcomingEvent.division.divisionName === appContext.selectedDivision),
-    );
-    setDivisionalHeadMessages(
-      headmsgs.filter((headmsg) => headmsg.divisions.divisionName === appContext.selectedDivision),
-    );
-    setDivisionalSliders(sliders.filter((slider) => slider.divisions.divisionName === appContext.selectedDivision));
-  }, [appContext, headmsgs, upcomingEvents, sliders]);
-
-  const [value, setValue] = React.useState('1');
+    setDivisionalUpcomingEvents(upcomingEvents.filter(upcomingEvent => upcomingEvent.division.divisionName === appContext.selectedDivision))
+    setDivisionalHeadMessages(headmsgs.filter(headmsg => headmsg.divisions.divisionName === appContext.selectedDivision))
+    setDivisionalSliders(sliders.filter(slider => slider.divisions.divisionName === appContext.selectedDivision))
+  }, [appContext, headmsgs, upcomingEvents, sliders])
 
   return (
     <>
@@ -76,6 +72,13 @@ export default function Home({
                 {' '}
                 Updates
               </h2>
+              {divisionalUpcomingEvents?.map((upcomingEvent, index) => (
+                <Cards2
+                  key={index}
+                  textContent={upcomingEvent.PPM_updates_textcontent}
+                  thumbnailUrl={`${config.BASE_IMAGE_URL}${upcomingEvent.PPM_update_banner.url}`}
+                />
+              ))}
               <h2 className="font-semibold text-2xl text-gray-400 border-b-2 border-gray-100 w-full pb-2 mt-8 ">
                 {' '}
                 New Joiners
@@ -102,6 +105,7 @@ export default function Home({
           </div>
         </div>
       </div>
+      {/* <Modal isOpen={true}>In the modal</Modal> */}
     </>
   );
 }
@@ -109,14 +113,12 @@ const client = new StrapiClient();
 export const getStaticProps = async () => {
   const upcomingEvents = await client.fetchData('/ppm-updates');
   const divisions = await client.fetchData('/divisions');
-  const mainSliders = await client.fetchData('/hall-of-fame-sliders');
   const headmsgs = await client.fetchData('/head-msgs');
   const sliders = await client.fetchData('/du-sliders');
   return {
     props: {
       upcomingEvents: upcomingEvents,
       divisions: divisions,
-      mainSliders: mainSliders,
       headmsgs: headmsgs,
       sliders: sliders,
     },

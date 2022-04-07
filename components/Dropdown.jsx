@@ -11,8 +11,6 @@ export default function Dropdown({ divisions, onChange, ...props }) {
     [onChange],
   );
 
-  //console.log('The items in Dropdown: ', props.items)
-
   return (
     <div className="inline-block relative w-64">
       <select
@@ -37,10 +35,7 @@ export default function Dropdown({ divisions, onChange, ...props }) {
   );
 }
 export const getStaticProps = async () => {
-  console.log('entered hof getStaticProps');
   const data = selectedDivision;
-  console.log('Selected Division in dropdown', data);
-
   return {
     props: {
       data: data,

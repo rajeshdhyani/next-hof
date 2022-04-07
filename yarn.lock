@@ -559,6 +559,11 @@ escape-string-regexp@^4.0.0:
   resolved "https://pkgs.dev.azure.com/hexagonPPMInnerSource/_packaging/PPM/npm/registry/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha1-FLqDpdNz49MR5a/KKc9b+tllvzQ=
 
+exenv@^1.2.0:
+  version "1.2.2"
+  resolved "https://pkgs.dev.azure.com/hexagonPPMInnerSource/_packaging/PPM/npm/registry/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
+  integrity sha1-KueOhdmJQVhnCwPUe+wfA72Ru50=
+
 fast-glob@^3.2.7:
   version "3.2.11"
   resolved "https://pkgs.dev.azure.com/hexagonPPMInnerSource/_packaging/PPM/npm/registry/fast-glob/-/fast-glob-3.2.11.tgz#a1172ad95ceb8a16e20caa5c5e56480e5129c1d9"
@@ -811,7 +816,7 @@ lodash@^4.17.21:
   resolved "https://pkgs.dev.azure.com/hexagonPPMInnerSource/_packaging/PPM/npm/registry/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw=
 
-loose-envify@^1.1.0, loose-envify@^1.4.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://pkgs.dev.azure.com/hexagonPPMInnerSource/_packaging/PPM/npm/registry/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha1-ce5R+nvkyuwaY4OffmgtgTLTDK8=
@@ -1091,6 +1096,21 @@ react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://pkgs.dev.azure.com/hexagonPPMInnerSource/_packaging/PPM/npm/registry/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
 
+react-lifecycles-compat@^3.0.0:
+  version "3.0.4"
+  resolved "https://pkgs.dev.azure.com/hexagonPPMInnerSource/_packaging/PPM/npm/registry/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+  integrity sha1-TxonOv38jzSIqMUWv9p4+HI1I2I=
+
+react-modal@^3.14.4:
+  version "3.14.4"
+  resolved "https://pkgs.dev.azure.com/hexagonPPMInnerSource/_packaging/PPM/npm/registry/react-modal/-/react-modal-3.14.4.tgz#2ca7e8e9a180955e5c9508c228b73167c1e6f6a3"
+  integrity sha1-LKfo6aGAlV5clQjCKLcxZ8Hm9qM=
+  dependencies:
+    exenv "^1.2.0"
+    prop-types "^15.7.2"
+    react-lifecycles-compat "^3.0.0"
+    warning "^4.0.3"
+
 react-player@^2.6.0:
   version "2.9.0"
   resolved "https://pkgs.dev.azure.com/hexagonPPMInnerSource/_packaging/PPM/npm/registry/react-player/-/react-player-2.9.0.tgz#ef7fe7073434087565f00ff219824e1e02c4b046"
@@ -1310,6 +1330,13 @@ uuid@^8.3.2:
   version "8.3.2"
   resolved "https://pkgs.dev.azure.com/hexagonPPMInnerSource/_packaging/PPM/npm/registry/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha1-gNW1ztJxu5r2xEXyGhoExgbO++I=
+
+warning@^4.0.3:
+  version "4.0.3"
+  resolved "https://pkgs.dev.azure.com/hexagonPPMInnerSource/_packaging/PPM/npm/registry/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
+  integrity sha1-Fungd+uKhtavfWSqHgX9hbRnjKM=
+  dependencies:
+    loose-envify "^1.0.0"
 
 wrappy@1:
   version "1.0.2"

@@ -1,20 +1,25 @@
-import styles from '../styles/Home.module.css';
-import { card } from '../components/card.js';
-export default function Cards() {
+import Image from 'next/image';
+import Card from "../components/ui/Card"
+
+export default function Newjoiners(props) {
   return (
     <>
-      <div className="flex justify-between  border border-grey-300 bg-white w-lg  mt-4">
-        <div className="pt-4 bg-white w-auto h-32 md:w-auto justify-center items-center shadow pt-2 px-4 py-4 flex flex-col">
-          <img
-            src="profile_pic.jpg"
-            alt="img"
-            title="img"
-            className="rounded-full h-16 w-16 object-cover border-2 border-gray-200"
-          ></img>
-          <h4 className="mt-2 text-xs  border-b-2">Kudir Chandra sekar rao</h4>
-          <div className="mb-2 text-xs  text-center capitalize">UX Designer</div>
+    <Card header={props.title} className="border border-grey-300 bg-white w-lg mt-4 pt-4">
+        <div className="flex flex-row pt-4 bg-white w-auto md:w-auto justify-items-start px-4 py-4 ">
+          <div className="border-2 rounded-full w-16 h-16 border-gray-200 relative">
+          <Image
+            src={props.image}
+            className="rounded-full"
+            width="60"
+            height="60"
+            objectFit="cover"
+            alt={props.title}
+          />
+          </div>
+          <div className="m-2 ml-4 text-xs place-self-center capitalize">{props.text.length > 60 ? props.text.substr(0, 60) + '...' : props.text}</div>
         </div>
-      </div>
+      </Card>
     </>
   );
 }
+
