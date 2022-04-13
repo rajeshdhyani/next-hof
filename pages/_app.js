@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
   const appContext = { divisions, setDivisions, selectedDivision, setSelectedDivision };
 
   return (
-    <AppContextProvider value={appContext}>
+    <AppContextProvider value={appContext} className="transition-all">
       <Layout>
         <Head>
           <title>Divisional Updates</title>
