@@ -7,7 +7,6 @@
   src: url('/fonts/Akkurat/Akkurat-Regular.otf');
   font-display: swap;
 }
-
 /* Place to set any theme level vars - not sure how tailwind works until I tinker with it deeply */
 
 :root {
@@ -42,4 +41,9 @@
 
 main{
   padding-bottom: 1rem;
+}
+
+.ReactModal__Body--open,
+.ReactModal__Html--open {
+  overflow: hidden;
 }

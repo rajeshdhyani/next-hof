@@ -8,7 +8,7 @@ import Button from "./ui/button";
 import Link from "next/link";
 
 export default function ProfileCard(props) {
-  const { title, image, likes, citation, link, as } = props;
+  const { title, image, likes, citation, link, as, date } = props;
   return (
     <div className={classNames([styles.wrapper, styles.wrapperAnime]) } onClick={props.onClick} >
       <div className={styles.header}>
@@ -48,6 +48,7 @@ export default function ProfileCard(props) {
       <Link href={link} as={as}>
         <a>
         <h4 className={styles.text}>{`${title}`}</h4>
+        <p className="text-xs">{date}</p>
         <p className="line-clamp-2 truncate text-xs text-clip overflow-hidden ... h-22 mt-2 leading-none">
           {citation}
         </p>
