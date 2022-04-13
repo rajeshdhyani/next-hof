@@ -1,7 +1,5 @@
-import Dropdown from './Dropdown.jsx';
 import Link from 'next/link';
 import { NavLink } from './ui/NavLink.js';
-import styles from '../styles/Navbar.module.css';
 import useAppContext from '../store/AppContextProvider/useAppContext.jsx';
 import DropdownList from './ui/DropdownList';
 
