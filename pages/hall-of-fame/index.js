@@ -180,8 +180,8 @@ export default function hof(props) {
           // subheader={selectedAwardee?.divisions.divisionName}
           // content={selectedAwardee?.Citation}
           className="border border-grey-300 bg-white p-4 flex relative">
-          {currentIndex > 0 && <Button onClick={() => previousAwardeeHandler(selectedAwardee)} className="absolute z-50 text-blue-500 text-3xl text-center items-center font-bold left-5 z-50 py-4 rounded-full cursor-pointer inset-y-1/2">&#8249;</Button>}
-          <div className="grid grid-flow-col auto-cols-auto gap-6 ml-12 place-items-start">
+          {currentIndex > 0 && <Button onClick={() => previousAwardeeHandler(selectedAwardee)} className="absolute transition-all z-50 bg-blue-100 hover:bg-blue-300 text-blue-500 hover:text-white text-1xl text-center items-center font-bold left-5 z-50 px-3 py-1 rounded-full cursor-pointer top-1/2">&#8249;</Button>}
+          <div className="grid grid-flow-col auto-cols-auto gap-6 ml-16 place-items-start">
             <Image
               src={`${BASE_IMG_URL}${selectedAwardee?.profile_pic.url}`}
               width={240} height={240} objectFit={'none'}
@@ -194,7 +194,7 @@ export default function hof(props) {
             </div>
             <Button onClick={() => router.push('/hall-of-fame')} className=" w-xs text-blue-500 hover:text-slate-400 transition-all items-center font-bold py-1 px-2 justify-self-end">&#x2715;</Button>
           </div>
-          {currentIndex < filteredAwardeesList.length-1 && <Button onClick={() => nextAwardeeHandler(selectedAwardee)} className="absolute z-50 text-blue-500 text-3xl text-center items-center font-bold right-5 z-50 py-4 rounded-full cursor-pointer inset-y-1/2" >&#8250;</Button>}
+          {currentIndex < filteredAwardeesList.length-1 && <Button onClick={() => nextAwardeeHandler(selectedAwardee)} className="absolute transition-all z-50 bg-blue-100 hover:bg-blue-300 text-blue-500 hover:text-white text-1xl text-center items-center font-bold right-5 z-50 px-3 py-1 rounded-full cursor-pointer top-1/2" >&#8250;</Button>}
         </Card>}
       </Modal>
     </>
