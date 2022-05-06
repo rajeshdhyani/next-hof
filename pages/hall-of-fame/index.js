@@ -4,9 +4,9 @@ import config from '../../api/config';
 import SearchBar from '../../components/SearchBar';
 import ProfileCard from '../../components/ProfileCard';
 // import ReactPlayer from 'react-player';
-import showIf from '../../helpers/showIf';
+// import showIf from '../../helpers/showIf';
 import React from 'react';
-import { FaPowerOff } from 'react-icons/fa';
+// import { FaPowerOff } from 'react-icons/fa';
 import Button from '../../components/ui/button';
 import Head from 'next/head';
 // import { AppContext } from '../../store/AppContextProvider';
@@ -17,7 +17,6 @@ import { Router, useRouter } from 'next/router';
 import Modal from 'react-modal';
 import Card from "../../components/ui/Card";
 import Image from 'next/image';
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const BASE_IMG_URL = config.BASE_IMAGE_URL;
 Modal.setAppElement("#__next");
@@ -92,7 +91,7 @@ export default function hof(props) {
   // let currentIndex = router.query.id ? filteredAwardeesList?.findIndex(x => x.id === target.id) : 0
   const [currentIndex, setCurrentIndex] = React.useState(0)
 
-  function currentIndexHandler(target){
+  function currentIndexHandler(target) {
     setCurrentIndex(filteredAwardeesList?.findIndex(x => x.id === target.id))
     console.log(currentIndex)
   }
@@ -157,7 +156,11 @@ export default function hof(props) {
           </div>
           {filteredAwardeesList?.length > 0 ?
             <div className="grid md:grid-cols-6 gap-4 mx-auto">
-              {filteredAwardeesList?.map((starAwardee, index) => (
+              {filteredAwardeesList?.sort((a,b) =>  { 
+                if (a.Awardee_name > b.Awardee_name) return 1;
+                if (a.Awardee_name < b.Awardee_name) return -1;
+                return 0;
+              }).map((starAwardee, index) => (
                 <ProfileCard
                   key={index}
                   title={starAwardee?.Awardee_name}
@@ -167,8 +170,8 @@ export default function hof(props) {
                   division={starAwardee?.divisions.divisionName}
                   link={`/hall-of-fame/?id=${starAwardee?.id.toString()}`}
                   as={`/hall-of-fame/${starAwardee?.id.toString()}`}
-                  date={starAwardee.AwardDate}
-                  onClick={()=>{currentIndexHandler(starAwardee)}}
+                  // date={starAwardee.AwardDate}
+                  onClick={() => { currentIndexHandler(starAwardee) }}
                 />))}
             </div>
             : <h3 className='mx-auto p-8' >No results found. Refine the query and filter again</h3>}
@@ -190,11 +193,11 @@ export default function hof(props) {
             <div>
               <h2 className={'text-2xl font-black'}>{selectedAwardee?.Awardee_name}</h2>
               <h3 className={'text-xl'}>{selectedAwardee?.divisions.divisionName}</h3>
-              <p className='mt-4'>{selectedAwardee?.Citation}</p>
+              <blockquote className='mt-4 pl-4 italic text-sm max-h-36 overflow-y-auto relative'>{selectedAwardee?.Citation}</blockquote>
             </div>
             <Button onClick={() => router.push('/hall-of-fame')} className=" w-xs bg-blue-200 hover:bg-blue-500 text-blue-700 hover:text-white transition-all items-center font-bold py-1 px-2 justify-self-end">&#x2715;</Button>
           </div>
-          {currentIndex < filteredAwardeesList.length-1 && <Button onClick={() => nextAwardeeHandler(selectedAwardee)} className="absolute transition-all z-50 bg-blue-100 hover:bg-blue-300 text-blue-500 hover:text-white text-1xl text-center items-center font-bold right-5 z-50 px-3 py-1 rounded-full cursor-pointer top-1/2" >&#8250;</Button>}
+          {currentIndex < filteredAwardeesList.length - 1 && <Button onClick={() => nextAwardeeHandler(selectedAwardee)} className="absolute transition-all z-50 bg-blue-100 hover:bg-blue-300 text-blue-500 hover:text-white text-1xl text-center items-center font-bold right-5 z-50 px-3 py-1 rounded-full cursor-pointer top-1/2" >&#8250;</Button>}
         </Card>}
       </Modal>
     </>

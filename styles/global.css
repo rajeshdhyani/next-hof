@@ -7,6 +7,7 @@
   src: url('/fonts/Akkurat/Akkurat-Regular.otf');
   font-display: swap;
 }
+
 /* Place to set any theme level vars - not sure how tailwind works until I tinker with it deeply */
 
 :root {
@@ -39,7 +40,7 @@
   width: 8px;
 }
 
-main{
+main {
   padding-bottom: 1rem;
 }
 
@@ -47,3 +48,26 @@ main{
 .ReactModal__Html--open {
   overflow: hidden;
 }
+
+/* blockquote::before {
+  content: '\201C';
+  font-size: 6rem;
+  position: sticky;
+  top: 0;
+  margin-left: -32px;
+  margin-right: 1rem;
+  z-index: 0;
+  color: var(--palette-background-thumb);
+  opacity: 0.6;
+} */
+
+/* blockquote::after {
+  content: '\201D';
+  font-size: 6rem;
+  position: sticky;
+  top: 48px;
+  z-index: 0;
+  color: var(--palette-background-thumb);
+  opacity: 0.6;
+  display: inline-block;
+} */
